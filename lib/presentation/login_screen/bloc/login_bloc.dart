@@ -22,15 +22,12 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   _onInitialize(
     LoginInitialEvent event,
     Emitter<LoginState> emit,
-  ) async {
+  ) {
     emit(state.copyWith(
-        emailController: TextEditingController(),
-        enterYourPasswordController: TextEditingController(),
-        isShowPassword: true));
-    Future.delayed(const Duration(milliseconds: 3000), () {
-      NavigatorService.popAndPushNamed(
-        AppRoutes.inicioScreen,
-      );
-    });
+      // emailController: TextEditingController(),
+      // passwordController: TextEditingController(),
+      // loginModelObj: LoginModel(),
+      // isShowPassword: false,
+    ));
   }
 }

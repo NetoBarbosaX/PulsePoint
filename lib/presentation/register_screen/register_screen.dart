@@ -71,17 +71,22 @@ class RegisterScreen extends StatelessWidget {
                       SizedBox(height: 31.v),
                       _buildRegistrar(context),
                       SizedBox(height: 19.v),
-                      RichText(
-                          text: TextSpan(children: [
-                            TextSpan(
-                                text: "msg_j_possui_conta2".tr,
-                                style: CustomTextStyles
-                                    .titleSmallErrorContainer_1),
-                            TextSpan(
-                                text: "lbl_entre_aqui".tr,
-                                style: CustomTextStyles.titleSmallPrimary_1)
-                          ]),
-                          textAlign: TextAlign.left),
+                      GestureDetector(
+                          onTap: () {
+                            NavigatorService.pushNamed(
+                                AppRoutes.loginScreen);
+                          },
+                          child: RichText(
+                              text: TextSpan(children: [
+                                TextSpan(
+                                    text: "msg_j_possui_conta2".tr,
+                                    style: CustomTextStyles
+                                        .titleSmallErrorContainer_1),
+                                TextSpan(
+                                    text: "lbl_entre_aqui".tr,
+                                    style: CustomTextStyles.titleSmallPrimary_1)
+                              ]),
+                              textAlign: TextAlign.left)),
                       SizedBox(height: 6.v)
                     ])))));
   }

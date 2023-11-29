@@ -8,6 +8,8 @@ import 'package:hospital_pulse_point/widgets/app_bar/appbar_title.dart';
 import 'package:hospital_pulse_point/widgets/app_bar/custom_app_bar.dart';
 import 'package:hospital_pulse_point/widgets/custom_elevated_button.dart';
 import 'package:hospital_pulse_point/widgets/custom_text_form_field.dart';
+//import routes
+import 'package:hospital_pulse_point/routes/app_routes.dart';
 
 // ignore_for_file: must_be_immutable
 class LoginScreen extends StatelessWidget {
@@ -121,37 +123,52 @@ class LoginScreen extends StatelessWidget {
                                   CustomTextStyles.titleSmallPrimaryContainer)),
                       SizedBox(height: 29.v),
                       CustomElevatedButton(
-                          text: "lbl_login".tr,
-                          margin: EdgeInsets.only(left: 8.h)),
+                        text: "lbl_login".tr,
+                        margin: EdgeInsets.only(left: 8.h),
+                        onPressed: () {
+                          NavigatorService.pushNamed(AppRoutes.inicioScreen);
+                        },
+                      ),
                       Spacer(),
-                      RichText(
-                          text: TextSpan(children: [
-                            TextSpan(
+                      GestureDetector(
+                        onTap: () {
+                          NavigatorService.pushNamed(AppRoutes.registerScreen);
+                        },
+                        child: RichText(
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
                                 text: "msg_n_o_possui_conta2".tr,
-                                style: CustomTextStyles
-                                    .titleSmallErrorContainer_1),
-                            TextSpan(
+                                style:
+                                    CustomTextStyles.titleSmallErrorContainer_1,
+                              ),
+                              TextSpan(
                                 text: "lbl_crie_agora".tr,
-                                style: CustomTextStyles.titleSmallPrimary)
-                          ]),
-                          textAlign: TextAlign.left)
+                                style: CustomTextStyles.titleSmallPrimary,
+                              ),
+                            ],
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
                     ])))));
   }
 
   /// Section Widget
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
-        height: 76.v,
-        leadingWidth: 63.h,
-        leading: AppbarLeadingIconbutton(
-            imagePath: ImageConstant.imgArrowLeft,
-            margin: EdgeInsets.only(left: 22.h, bottom: 23.v),
-            onTap: () {
-              onTapArrowLeft(context);
-            }),
-        title: AppbarTitle(
-            text: "lbl_pulse_point".tr,
-            margin: EdgeInsets.only(left: 71.h, top: 28.v)));
+        // height: 76.v,
+        // leadingWidth: 63.h,
+        // leading: AppbarLeadingIconbutton(
+        //     imagePath: ImageConstant.imgArrowLeft,
+        //     margin: EdgeInsets.only(left: 22.h, bottom: 23.v),
+        //     onTap: () {
+        //       onTapArrowLeft(context);
+        //     }),
+        // title: AppbarTitle(
+        //     text: "lbl_pulse_point".tr,
+        //     margin: EdgeInsets.only(left: 71.h, top: 28.v)));
+    );
   }
 
   /// Navigates to the previous screen.

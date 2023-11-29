@@ -88,7 +88,7 @@ class InicioScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 5.v),
+              SizedBox(height: 10.v),
             ],
           ),
         ),
